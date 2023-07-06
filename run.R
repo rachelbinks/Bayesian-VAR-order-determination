@@ -45,7 +45,7 @@ file=paste0(my_path, "/multiplicative_gamma.stan")
 mod=cmdstan_model(file)
 
 #create named list of everything from data block in stan program
-data=list(m=m, p=8, N=1000, y=y, n_miss = 0, ind_miss = c(), df=m+4, S=diag(m), a1=2.5, a2=3, a = 6)
+data=list(m=m, p=8, N=1000, y=y, n_miss = 0, ind_miss = c(), df=m+4, scale_diag = 1, scale_offdiag = 0, a1=2.5, a2=3, a = 6)
 
 #run HMC with 4 chains on 4 parallel cores, with 1000 iterations of warmup and 4000 sampling iterations
 output = mod$sample(data=data, chains=4, parallel_chains=4,
