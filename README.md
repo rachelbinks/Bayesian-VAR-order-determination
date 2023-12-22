@@ -5,9 +5,9 @@ This repository contains the code and datasets associated with the manuscript 'B
 ## Files
 
 The following files are included in the repository:
-* multiplicative_gamma.stan - this is the associated Stan program used to fit a zero-mean vector autoregressive model with a maximum order, $p_{\max}$, using a multiplicative gamma process prior for the unconstrained partial autocorrelation matrices and an inverse Wishart prior for the error variance. We used Stan version 2.29.2 to carry out the analyses.
-* functions.R - this is an R file containing functions required to simulate a new dataset. 
-* run.R - this is an R file which provides illustrative R code to run the Stan program. The code allows the user to either generate a new dataset or use one of the datasets used in the simulation experiments in Section 5 of the manuscript.
+* `multiplicative_gamma.stan` - this is the associated Stan program used to fit a zero-mean vector autoregressive model with a maximum order, $p_{\max}$, using a multiplicative gamma process prior for the unconstrained partial autocorrelation matrices and an inverse Wishart prior for the error variance. We used Stan version 2.29.2 to carry out the analyses.
+* `functions.R` - this is an R file containing functions required to simulate a new dataset. 
+* `run.R` - this is an R file which provides illustrative R code to run the Stan program. The code allows the user to either generate a new dataset or use one of the datasets used in the simulation experiments in Section 5 of the manuscript.
 
 ## Data
 
