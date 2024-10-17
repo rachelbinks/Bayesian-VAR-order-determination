@@ -198,7 +198,7 @@ eff_order = function(P, pmax, threshold, singval=FALSE) {
     if(!singval) nonzero[iter,] = apply(Parr, 1, function(mat) !all(abs(mat)<threshold))
     else nonzero[iter,] = apply(Parr, 1, function(mat) svd(mat)$d[1]>=threshold)
   }
-  pstar = rowSums(nonzero)
+  pstar = apply(nonzero, 1, function(x) max(which(x)))
   posterior_mass = tabulate(pstar+1, nbins=pmax+1) / nrow(P)
   names(posterior_mass) = paste("Pr(p*=", 0:pmax, "| ...)", sep="")
   return(list(nonzero=nonzero, samples=pstar, pmf=posterior_mass))
